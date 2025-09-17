@@ -136,7 +136,9 @@ class _FlagCache {
     final byteData = await _FlagAssetLoader.loadAsset(assetName, context, assetBundle);
     final loader = SvgBytesLoader(Uint8List.sublistView(byteData));
     // add it to svg cache
-    svg.cache.putIfAbsent(loader.cacheKey(context), () => loader.loadBytes(context));
+    if (context != null && context.mounted) {
+      svg.cache.putIfAbsent(loader.cacheKey(context), () => loader.loadBytes(context));
+    }
     return loader;
   }
 

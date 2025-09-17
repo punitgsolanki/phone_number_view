@@ -1,9 +1,3 @@
-// Copyright (c) 2016, Agilord. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
-
-/// A very simple replacement map that handles the common characters in Western
-/// languages.
-
 bool _initialized = false;
 Map<int, int> _singleUnit = {};
 Map<int, List<int>> _multiUnit = {};

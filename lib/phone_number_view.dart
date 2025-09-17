@@ -1,5 +1,3 @@
-library;
-
 export 'src/circle_flags/circle_flags.dart';
 export 'src/core/resources/phone_number_string_const.dart';
 export 'src/diacritic/diacritic.dart';

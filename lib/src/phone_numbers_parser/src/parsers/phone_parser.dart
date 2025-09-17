@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'package:phone_number_view/src/phone_numbers_parser/src/validation/validator.dart';
 
 import '../iso_codes/iso_code.dart';
@@ -31,7 +30,6 @@ import '_text_parser.dart';
 ///
 /// {@endtemplate}
 abstract class PhoneParser {
-  @internal
   static PhoneNumber parse(
     String phoneNumber, {
     IsoCode? callerCountry,

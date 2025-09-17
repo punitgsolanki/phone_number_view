@@ -9,9 +9,7 @@ class NoResultView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text(
-        title ??
-            PhoneNumberStringConst.noResultMessage ??
-            PhoneNumberStringConst.noResultMessage,
+        title ?? PhoneNumberStringConst.noResultMessage,
         key: const ValueKey('no-result'),
       ),
     );
