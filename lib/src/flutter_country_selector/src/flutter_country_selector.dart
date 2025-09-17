@@ -1,6 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:phone_number_view/phone_number_view.dart';
+
+import '../../circle_flags/circle_flags.dart';
+import '../../phone_numbers_parser/phone_numbers_parser.dart';
+import '../flutter_country_selector.dart';
 
 abstract class CountrySelector {
   /// on the web, will download flag assets in memory.

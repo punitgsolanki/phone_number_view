@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:phone_number_view/phone_number_view.dart';
+
+import '../../core/resources/phone_number_string_const.dart';
 
 /// Will talk back the following:
 /// "Editbox, Phone number, detected text: +1 650 555 1234", ...

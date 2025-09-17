@@ -1,6 +1,4 @@
-// responsible of searching through the country list
-import 'package:phone_number_view/phone_number_view.dart';
-
+import '../../../diacritic/diacritic.dart';
 import 'searchable_country.dart';
 
 class CountryFinder {

@@ -1,7 +1,8 @@
-import 'package:phone_number_view/phone_number_view.dart';
 import 'package:phone_number_view/src/phone_numbers_parser/src/metadata/metadata_finder.dart';
 import 'package:phone_number_view/src/phone_numbers_parser/src/parsers/_text_parser.dart';
 import 'package:phone_number_view/src/phone_numbers_parser/src/validation/validator.dart';
+
+import '../phone_numbers_parser.dart';
 
 /// represents a phone number
 ///

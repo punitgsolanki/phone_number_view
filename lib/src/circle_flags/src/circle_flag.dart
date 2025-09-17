@@ -9,7 +9,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 /// First positional argument is iso code of the country - can be used string
 /// or [Flags] helper.
 class CircleFlag extends StatelessWidget {
-  static final _FlagCache cache = _FlagCache();
+  static final FlagCache cache = FlagCache();
   final BytesLoader loader;
   final double size;
 
@@ -118,7 +118,7 @@ class _FlagAssetLoader extends SvgAssetLoader {
 /// a flag loader cache that allows for preloading
 /// svg bytes.
 /// Currently only caches preloaded items
-class _FlagCache {
+class FlagCache {
   final _loaders = <String, SvgBytesLoader>{};
 
   /// preloads flag data into svg cache

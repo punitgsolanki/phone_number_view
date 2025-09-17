@@ -1,7 +1,7 @@
-import 'package:phone_number_view/phone_number_view.dart';
 import 'package:phone_number_view/src/phone_numbers_parser/src/metadata/metadata_finder.dart';
 import 'package:phone_number_view/src/phone_numbers_parser/src/regex/match_entirely_extension.dart';
 
+import '../../phone_numbers_parser.dart';
 import '../regex/constants.dart';
 import '../metadata/models/phone_metadata_lengths.dart';
 import '../metadata/models/phone_metadata_patterns.dart';

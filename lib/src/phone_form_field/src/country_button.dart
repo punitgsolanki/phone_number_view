@@ -1,5 +1,8 @@
-import 'package:phone_number_view/phone_number_view.dart';
 import 'package:flutter/material.dart';
+
+import '../../circle_flags/circle_flags.dart';
+import '../../core/resources/phone_number_string_const.dart';
+import '../../phone_numbers_parser/phone_numbers_parser.dart';
 
 @Deprecated('Use [CountryButton] instead')
 typedef CountryChip = CountryButton;

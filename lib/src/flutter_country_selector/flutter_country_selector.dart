@@ -1,6 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:phone_number_view/phone_number_view.dart';
+
+import '../circle_flags/src/circle_flag.dart';
+import '../phone_numbers_parser/src/iso_codes/iso_code.dart';
+import 'flutter_country_selector.dart';
 
 export 'src/country_selector_base.dart';
 export 'src/country_selector_page.dart';

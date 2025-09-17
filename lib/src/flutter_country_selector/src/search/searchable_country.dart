@@ -1,11 +1,6 @@
-import 'package:phone_number_view/phone_number_view.dart';
+import '../../../diacritic/diacritic.dart';
+import '../../../phone_numbers_parser/phone_numbers_parser.dart';
 
-/// [SearchableCountry] regroups informations for searching
-/// a country by some of its properties. It is not meant
-/// to be exported outside this pacakge, as we would like people
-/// to use CountrySelectorLocalization.of(context).countryName()
-/// to find the country name instead, which would prevent country.name
-/// to be out of sync if the search happened before a language change.
 class SearchableCountry {
   /// Country alpha-2 iso code
   final IsoCode isoCode;

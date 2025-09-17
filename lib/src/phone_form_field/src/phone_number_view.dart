@@ -5,13 +5,12 @@ import 'package:flutter/services.dart';
 import 'package:phone_number_view/phone_number_view.dart';
 import 'package:phone_number_view/src/phone_form_field/src/phone_field_semantics.dart';
 import 'package:phone_number_view/src/phone_form_field/src/validation/allowed_characters.dart';
-import 'dart:ui' as ui show BoxHeightStyle, BoxWidthStyle;
 
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:phone_number_view/src/phone_form_field/src/validation/limit_max_length_formatter.dart';
 
+import '../../circle_flags/circle_flags.dart';
 import '../../phone_numbers_parser/metadata.dart';
+import '../../phone_numbers_parser/phone_numbers_parser.dart';
 
 part 'phone_controller.dart';
 part 'phone_form_field_state.dart';

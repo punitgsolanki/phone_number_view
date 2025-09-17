@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:phone_number_view/phone_number_view.dart';
 
+import '../../phone_numbers_parser/phone_numbers_parser.dart';
 import '_country_selector_controller.dart';
 
 abstract class CountrySelectorBase extends StatefulWidget {

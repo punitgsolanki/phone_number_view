@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:phone_number_view/phone_number_view.dart';
+
+import '../../flutter_country_selector/flutter_country_selector.dart';
+import '../../phone_numbers_parser/phone_numbers_parser.dart';
 
 abstract class CountrySelectorNavigator {
   final List<IsoCode>? countries;

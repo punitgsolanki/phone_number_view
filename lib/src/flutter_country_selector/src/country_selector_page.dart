@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:phone_number_view/phone_number_view.dart';
+import '../../core/resources/phone_number_string_const.dart';
+import '../flutter_country_selector.dart';
 import 'widgets/_country_list_view.dart';
 import 'widgets/_search_box.dart';
 
