@@ -219,7 +219,6 @@ I took inspiration from these packages:
 - [phone_form_field](https://pub.dev/packages/phone_form_field) - Core phone input functionality
 - [flutter_country_selector](https://pub.dev/packages/flutter_country_selector) - Country selection
 - [phone_numbers_parser](https://pub.dev/packages/phone_numbers_parser) - Phone number parsing and validation
-- [provider](https://pub.dev/packages/provider) - State management
 
 ## Support
 
@@ -230,7 +229,7 @@ If you find this package helpful, please consider:
 - 📝 Contributing to the documentation
 - 💡 Suggesting new features
 
-For questions and support, please [open an issue](https://github.com/your-username/phone_number_view/issues) on GitHub.
+For questions and support, please [open an issue](https://github.com/punitgsolanki/phone_number_view/issues) on GitHub.
 
 ---
 
