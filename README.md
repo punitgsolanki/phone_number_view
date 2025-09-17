@@ -42,40 +42,6 @@ flutter pub get
 
 ## Usage
 
-### Basic Usage
-
-```dart
-import 'package:flutter/material.dart';
-import 'package:phone_number_view/phone_number_view.dart';
-import 'package:provider/provider.dart';
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => PhoneFieldSettingsProvider()),
-        ChangeNotifierProvider(create: (_) => PhoneControllerProvider()),
-      ],
-      child: MaterialApp(
-        home: MyHomePage(),
-      ),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: PhoneNumberView(),
-    );
-  }
-}
-```
-
-### Advanced Usage with Customization
-
 ```dart
 PhoneNumberView(
   focusNode: myFocusNode,
@@ -111,45 +77,6 @@ PhoneNumberView(
   onSaved: (phoneNumber) => debugPrint('Saved: $phoneNumber'),
   onChanged: (phoneNumber) => debugPrint('Changed: $phoneNumber'),
 )
-```
-
-## State Management with Provider
-
-This package uses the Provider pattern for clean state management. You need to set up providers in your app:
-
-### 1. Phone Controller Provider
-
-Manages the phone number controller and form state:
-
-```dart
-class PhoneControllerProvider extends ChangeNotifier {
-  late PhoneController _controller;
-  final FocusNode _focusNode = FocusNode();
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
-  // Getters and methods for phone number operations
-  PhoneController get controller => _controller;
-  void resetForm() => _formKey.currentState?.reset();
-  void setPhoneNumber(String number) => _controller.value = PhoneNumber.parse(number);
-}
-```
-
-### 2. Phone Field Settings Provider
-
-Manages UI settings and configuration:
-
-```dart
-class PhoneFieldSettingsProvider extends ChangeNotifier {
-  bool _outlineBorder = true;
-  bool _mobileOnly = true;
-  bool _withLabel = true;
-  // ... other settings
-
-  void setOutlineBorder(bool value) {
-    _outlineBorder = value;
-    notifyListeners();
-  }
-}
 ```
 
 ## Validation
@@ -301,7 +228,7 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 ## Dependencies
 
-This package depends on:
+I took inspiration from these packages:
 
 - [phone_form_field](https://pub.dev/packages/phone_form_field) - Core phone input functionality
 - [flutter_country_selector](https://pub.dev/packages/flutter_country_selector) - Country selection
