@@ -1,0 +1,24 @@
+name: phone_number_view
+description: "A Flutter package for phone number input with international formatting, validation, and country selection."
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ">=3.5.3 <4.0.0"
+#  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_svg: ^2.0.9
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+#  flutter_lints: ^5.0.0
+#  meta: ^1.10.0
+
+flutter:
+  assets:
+    - assets/svg/
