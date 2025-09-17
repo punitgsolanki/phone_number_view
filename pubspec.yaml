@@ -1,7 +1,8 @@
 name: phone_number_view
 description: "A Flutter package for phone number input with international formatting, validation, and country selection."
 version: 0.0.1
-homepage:
+homepage: https://github.com/punitgsolanki/phone_number_view/tree/main
+repository: https://github.com/punitgsolanki/phone_number_view.git
 
 environment:
   sdk: ">=3.5.3 <4.0.0"

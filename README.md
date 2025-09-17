@@ -4,6 +4,10 @@ A Flutter package for phone number input with international formatting, validati
 
 [![pub package](https://img.shields.io/pub/v/phone_number_view.svg)](https://pub.dev/packages/phone_number_view)
 
+<img src="https://github.com/punitgsolanki/phone_number_view/blob/main/resources/Screenshot_20250917_152854.png">
+
+<img src="https://github.com/punitgsolanki/phone_number_view/blob/main/resources/Screenshot_20250917_153059.png">
+
 ## Features
 
 - 📱 **International phone number input** with automatic formatting
@@ -16,7 +20,7 @@ A Flutter package for phone number input with international formatting, validati
 
 ## Demo
 
-*Demo available at: [your-demo-link-here]*
+*Demo available at: [https://github.com/punitgsolanki/phone_number_view/blob/main/resources/app-release.apk]*
 
 ![Phone Number View Demo](demo.gif)
 
@@ -26,8 +30,8 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  phone_number_view: ^1.0.0
-  provider: ^6.1.2  # Required for state management
+  phone_number_view: ^0.0.1
+  provider: ^6.1.2  # Optional - Required for state management
 ```
 
 Then run:
@@ -168,7 +172,7 @@ PhoneValidator.validMobile()
 PhoneValidator.validFixedLine()
 
 // Country-specific validator
-PhoneValidator.validCountry(['US', 'GB'])
+PhoneValidator.validCountry(['US', 'IN'])
 
 // Custom validator
 PhoneValidator.compose([
@@ -215,7 +219,7 @@ CountrySelectorNavigator.dialog(width: 400)
 ```dart
 // Regular bottom sheet
 CountrySelectorNavigator.bottomSheet(
-  favorites: [IsoCode.US, IsoCode.GB],
+  favorites: [IsoCode.US, IsoCode.IN],
 )
 
 // Modal bottom sheet
