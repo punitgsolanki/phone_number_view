@@ -48,15 +48,15 @@ class CircleFlag extends StatelessWidget {
   }
 
   /// preload a list of flags in memory
-  static preload(Iterable<String> isoCodes) {
+  static Future<void> preload(Iterable<String> isoCodes) {
     return cache.preload(isoCodes);
   }
 
   @override
   Widget build(BuildContext context) {
-    final svg = SvgPicture(loader, width: size, height: size);
+    final SvgPicture svg = SvgPicture(loader, width: size, height: size);
 
-    final clipped =
+    final Widget clipped =
         shape == null
             ? svg
             : ClipPath(
@@ -80,7 +80,7 @@ class _FlagAssetLoader extends SvgAssetLoader {
   }
 
   static Future<ByteData> loadAsset(String assetName, [BuildContext? context, AssetBundle? assetBundle]) {
-    final bundle = _FlagAssetLoader._resolveBundle(assetBundle, context);
+    final AssetBundle bundle = _FlagAssetLoader._resolveBundle(assetBundle, context);
     return bundle
         .load(assetName)
         // if any error loading a flag try to show the "?" flag
@@ -99,7 +99,7 @@ class _FlagAssetLoader extends SvgAssetLoader {
 
   @override
   Future<ByteData?> prepareMessage(BuildContext? context) {
-    final bundle = _resolveBundle(assetBundle, context);
+    final AssetBundle bundle = _resolveBundle(assetBundle, context);
     return bundle
         .load(computeAssetName(isoCode))
         // load "?" on error
@@ -119,22 +119,22 @@ class _FlagAssetLoader extends SvgAssetLoader {
 /// svg bytes.
 /// Currently only caches preloaded items
 class FlagCache {
-  final _loaders = <String, SvgBytesLoader>{};
+  final Map<String, SvgBytesLoader> _loaders = <String, SvgBytesLoader>{};
 
   /// preloads flag data into svg cache
   Future<void> preload(Iterable<String> isoCodes, [BuildContext? context, AssetBundle? assetBundle]) async {
-    final tasks = <Future>[];
-    for (final isoCode in isoCodes) {
-      final task = _createLoader(isoCode, context, assetBundle).then((loader) => _addLoaderToCache(isoCode, loader));
+    final List<Future<void>> tasks = <Future<void>>[];
+    for (final String isoCode in isoCodes) {
+      final Future<void> task = _createLoader(isoCode, context, assetBundle).then((SvgBytesLoader loader) => _addLoaderToCache(isoCode, loader));
       tasks.add(task);
     }
     await Future.wait(tasks);
   }
 
   Future<SvgBytesLoader> _createLoader(String isoCode, BuildContext? context, AssetBundle? assetBundle) async {
-    final assetName = _FlagAssetLoader.computeAssetName(isoCode);
-    final byteData = await _FlagAssetLoader.loadAsset(assetName, context, assetBundle);
-    final loader = SvgBytesLoader(Uint8List.sublistView(byteData));
+    final String assetName = _FlagAssetLoader.computeAssetName(isoCode);
+    final ByteData byteData = await _FlagAssetLoader.loadAsset(assetName, context, assetBundle);
+    final SvgBytesLoader loader = SvgBytesLoader(Uint8List.sublistView(byteData));
     // add it to svg cache
     if (context != null && context.mounted) {
       svg.cache.putIfAbsent(loader.cacheKey(context), () => loader.loadBytes(context));

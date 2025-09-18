@@ -1,7 +1,6 @@
 import 'package:example/core/constants/string_constants.dart';
 import 'package:example/features/phone_number/providers/phone_controller_provider.dart';
 import 'package:example/features/phone_number/widgets/phone_action_buttons.dart';
-import 'package:example/features/phone_number/widgets/phone_field_settings_panel.dart';
 import 'package:example/features/phone_number/widgets/phone_field_view.dart';
 import 'package:example/features/phone_number/widgets/phone_info_display.dart';
 import 'package:flutter/material.dart';

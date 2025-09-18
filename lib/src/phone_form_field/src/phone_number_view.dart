@@ -1,3 +1,35 @@
+// =====================================================
+// MAIN LIBRARY FILE - phone_number_view.dart
+// =====================================================
+
+/// A comprehensive Flutter package for international phone number input
+/// with validation, formatting, and country selection capabilities.
+///
+/// This library provides a clean, customizable phone number input widget
+/// built on top of phone_form_field with enhanced features and Provider
+/// state management integration.
+///
+/// ## Features
+///
+/// * International phone number formatting
+/// * Multiple country selector options
+/// * Built-in validation system
+/// * Provider state management
+/// * Accessibility support
+/// * Cross-platform compatibility
+///
+/// ## Basic Usage
+///
+/// ```dart
+/// PhoneNumberView(
+///   onChanged: (phoneNumber) => print('Phone: $phoneNumber'),
+///   validator: PhoneValidator.validMobile(),
+/// )
+/// ```
+
+library;
+
+// Export all public APIs with documentation
 import 'dart:ui' as ui show BoxHeightStyle, BoxWidthStyle;
 
 import 'package:flutter/material.dart';
@@ -8,33 +40,56 @@ import 'package:phone_number_view/src/phone_form_field/src/validation/allowed_ch
 
 import 'package:phone_number_view/src/phone_form_field/src/validation/limit_max_length_formatter.dart';
 
-import '../../circle_flags/circle_flags.dart';
 import '../../phone_numbers_parser/metadata.dart';
-import '../../phone_numbers_parser/phone_numbers_parser.dart';
 
 part 'phone_controller.dart';
 part 'phone_form_field_state.dart';
 
-/// Phone input extending form field.
+// =====================================================
+// PHONE NUMBER VIEW WIDGET
+// =====================================================
+
+/// A customizable phone number input widget with international support.
 ///
-/// ### controller:
-/// {@template controller}
-/// Use a [PhoneController] for PhoneFormField when you need to dynamically
-/// change the value.
+/// This widget provides a comprehensive solution for phone number input
+/// with automatic formatting, validation, and country selection. It uses
+/// Provider pattern for clean state management.
 ///
-/// Whenever the user modifies the phone field with an
-/// associated [controller], the phone field updates
-/// the display value and the controller notifies its listeners.
-/// {@endtemplate}
+/// ## Features
 ///
-/// You can also use an [initialValue]:
-/// {@template initialValue}
-/// The initial value used.
+/// * Automatic phone number formatting based on country
+/// * Multiple country selector UI options
+/// * Built-in and custom validation support
+/// * Provider-based state management
+/// * Accessibility and internationalization support
+/// * Cross-platform compatibility
 ///
-/// Only one of [initialValue] and [controller] can be specified.
-/// If [controller] is specified the [initialValue] will be
-/// the first value of the [PhoneController]
-/// {@endtemplate}
+/// ## Example
+///
+/// ```dart
+/// PhoneNumberView(
+///   controller: myPhoneController,
+///   focusNode: myFocusNode,
+///   decoration: InputDecoration(
+///     labelText: 'Phone Number',
+///     border: OutlineInputBorder(),
+///   ),
+///   validator: PhoneValidator.compose([
+///     PhoneValidator.required(),
+///     PhoneValidator.validMobile(),
+///   ]),
+///   onChanged: (phoneNumber) {
+///     print('Phone number changed: $phoneNumber');
+///   },
+///   countrySelectorNavigator: CountrySelectorNavigator.bottomSheet(),
+/// )
+/// ```
+///
+/// See also:
+///
+/// * [PhoneController] for managing phone number state
+/// * [PhoneValidator] for validation options
+/// * [CountrySelectorNavigator] for country selection methods
 class PhoneNumberView extends FormField<PhoneNumber> {
   /// {@macro controller}
   final PhoneController? controller;
@@ -60,7 +115,7 @@ class PhoneNumberView extends FormField<PhoneNumber> {
   /// The style of the country selector button
   final CountryButtonStyle countryButtonStyle;
 
-  // textfield inputs
+  // TextField inputs
   final InputDecoration decoration;
   final TextInputType keyboardType;
   final TextInputAction? textInputAction;
@@ -100,7 +155,7 @@ class PhoneNumberView extends FormField<PhoneNumber> {
   final List<TextInputFormatter>? inputFormatters;
   final bool shouldLimitLengthByCountry;
 
-  static preloadFlags() => CircleFlag.preload(Flags.values);
+  static Future<void> preloadFlags() async => CircleFlag.preload(Flags.values);
 
   PhoneNumberView({
     super.key,

@@ -40,7 +40,7 @@ class PhoneController extends ChangeNotifier {
     final oldFormattedText = _value.formatNsn();
     var newFormattedText = text;
 
-    bool isDeleting = text.length < oldFormattedText.length;
+    final bool isDeleting = text.length < oldFormattedText.length;
 
     // if starts with + then we parse the whole number
     final startsWithPlus =

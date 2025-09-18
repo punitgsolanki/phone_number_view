@@ -14,7 +14,7 @@ abstract class CountryCodeParser {
       phoneNumber.length,
       Constants.maxLengthCountryCallingCode,
     );
-    var longestPotentialCountryCode =
+    final longestPotentialCountryCode =
         phoneNumber.substring(0, maxCountryCodeLength);
 
     for (var i = 1; i <= longestPotentialCountryCode.length; i++) {

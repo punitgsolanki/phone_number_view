@@ -39,7 +39,7 @@ class CountrySelectorPageState extends CountrySelectorBaseState {
           onChanged: onSearch,
           onSubmitted: onSubmitted,
           decoration: widget.searchBoxDecoration ??
-              InputDecoration(
+              const InputDecoration(
                 border: InputBorder.none,
                 hintText: PhoneNumberStringConst.search,
               ),

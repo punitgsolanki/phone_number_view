@@ -139,8 +139,8 @@ class PhoneNumber {
   /// Returns true if this phone number is numerically greater
   /// than [other]
   bool operator >(PhoneNumber other) {
-    var selfAsNum = BigInt.parse(international);
-    var otherAsNum = BigInt.parse(other.international);
+    final selfAsNum = BigInt.parse(international);
+    final otherAsNum = BigInt.parse(other.international);
 
     return (selfAsNum - otherAsNum).toInt() > 0;
   }

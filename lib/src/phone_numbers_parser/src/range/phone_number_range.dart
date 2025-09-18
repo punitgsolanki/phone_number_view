@@ -31,12 +31,12 @@ class PhoneNumberRange {
   /// Calculates the number of [PhoneNumber]s in the range (inclusive of start and end)
   /// where 'this' is the start of the range and [endOfRange] is the end of the range.
   int get count {
-    var first = BigInt.parse(start.international);
-    var last = BigInt.parse(end.international);
+    final first = BigInt.parse(start.international);
+    final last = BigInt.parse(end.international);
 
-    var bigInterval = last - first;
+    final bigInterval = last - first;
 
-    var interval = bigInterval.abs().toInt() + 1;
+    final interval = bigInterval.abs().toInt() + 1;
 
     return interval;
   }
@@ -44,10 +44,10 @@ class PhoneNumberRange {
   /// Returns a list of [PhoneNumber]s in the range
   /// [this] to [endOfRange] inclusive.
   List<PhoneNumber> expandRange() {
-    var first = BigInt.parse(start.international);
-    var last = BigInt.parse(end.international);
+    final first = BigInt.parse(start.international);
+    final last = BigInt.parse(end.international);
 
-    var range = <PhoneNumber>[];
+    final range = <PhoneNumber>[];
     for (var current = first; current <= last; current = current + BigInt.one) {
       final next = PhoneNumber(
         isoCode: start.isoCode,

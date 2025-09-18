@@ -14,13 +14,13 @@ abstract class CountrySelector {
   /// If you do not specify an iso code, will download all flag assets.
   static Future<void> preloadFlags({Iterable<IsoCode>? isoCodes}) {
     isoCodes ??= IsoCode.values;
-    return CircleFlag.preload(isoCodes.map((isoCode) => isoCode.name));
+    return CircleFlag.preload(isoCodes.map((IsoCode isoCode) => isoCode.name));
   }
 
   /// Use [CountrySelector.page] if you need to show the selector inside
   /// a widget that is full screen. If you need to show the selector inside
   /// a modal of some sort, use [CountrySelector.sheet] instead.
-  static page({
+  static CountrySelectorPage page({
     required void Function(IsoCode) onCountrySelected,
     List<IsoCode>? countries = IsoCode.values,
     List<IsoCode>? favoriteCountries,
@@ -60,7 +60,7 @@ abstract class CountrySelector {
   static sheet({
     required void Function(IsoCode) onCountrySelected,
     List<IsoCode> countries = IsoCode.values,
-    List<IsoCode> favoriteCountries = const [],
+    List<IsoCode> favoriteCountries = const <IsoCode>[],
     ScrollController? scrollController,
     ScrollPhysics? scrollPhysics,
     bool addFavoritesSeparator = true,
