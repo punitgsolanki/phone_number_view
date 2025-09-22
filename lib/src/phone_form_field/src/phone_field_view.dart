@@ -1,5 +1,5 @@
 // =====================================================
-// MAIN LIBRARY FILE - phone_number_view.dart
+// MAIN LIBRARY FILE - phone_field.dart
 // =====================================================
 
 /// A comprehensive Flutter package for international phone number input
@@ -90,7 +90,7 @@ part 'phone_form_field_state.dart';
 /// * [PhoneController] for managing phone number state
 /// * [PhoneValidator] for validation options
 /// * [CountrySelectorNavigator] for country selection methods
-class PhoneNumberView extends FormField<PhoneNumber> {
+class PhoneFormField extends FormField<PhoneNumber> {
   /// {@macro controller}
   final PhoneController? controller;
 
@@ -157,7 +157,7 @@ class PhoneNumberView extends FormField<PhoneNumber> {
 
   static Future<void> preloadFlags() async => CircleFlag.preload(Flags.values);
 
-  PhoneNumberView({
+  PhoneFormField({
     super.key,
     this.controller,
     this.onChanged,

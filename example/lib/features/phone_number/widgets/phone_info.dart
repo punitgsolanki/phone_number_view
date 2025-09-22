@@ -6,8 +6,8 @@ import 'package:provider/provider.dart';
 
 /// Phone information display widget
 /// Shows current phone number state and validation results
-class PhoneInfoDisplay extends StatelessWidget {
-  const PhoneInfoDisplay({super.key});
+class PhoneInfo extends StatelessWidget {
+  const PhoneInfo({super.key});
 
   @override
   Widget build(BuildContext context) {

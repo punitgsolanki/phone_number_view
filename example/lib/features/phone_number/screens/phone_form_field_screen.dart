@@ -1,8 +1,8 @@
 import 'package:example/core/constants/string_constants.dart';
 import 'package:example/features/phone_number/providers/phone_controller_provider.dart';
 import 'package:example/features/phone_number/widgets/phone_action_buttons.dart';
-import 'package:example/features/phone_number/widgets/phone_field_view.dart';
-import 'package:example/features/phone_number/widgets/phone_info_display.dart';
+import 'package:example/features/phone_number/widgets/phone_field.dart';
+import 'package:example/features/phone_number/widgets/phone_info.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -32,14 +32,14 @@ class PhoneFormFieldScreen extends StatelessWidget {
                     // Phone form field
                     Consumer<PhoneControllerProvider>(
                       builder: (context, phoneProvider, child) {
-                        return Form(key: phoneProvider.formKey, child: const PhoneFieldView());
+                        return Form(key: phoneProvider.formKey, child: const PhoneField());
                       },
                     ),
 
                     const SizedBox(height: 12),
 
                     // Phone info display
-                    const PhoneInfoDisplay(),
+                    const PhoneInfo(),
 
                     const SizedBox(height: 12),
 

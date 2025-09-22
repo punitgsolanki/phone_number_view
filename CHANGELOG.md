@@ -1,5 +1,4 @@
 ## 0.0.1
-
 ### 🎉 Initial Release
 
 This is the first stable release of `phone_number_view` - a Flutter package for international phone number input with enhanced customization and clean architecture.
@@ -21,15 +20,6 @@ This is the first stable release of `phone_number_view` - a Flutter package for 
 - **Flutter SDK**: `>=3.0.0 <4.0.0`
 - **Dart**: `>=2.17.0 <4.0.0`
 
----
-
-### 🔮 What's Next?
-
-Future releases will include:
-- Additional country selector themes
-- Enhanced validation rules
-- Performance optimizations
-- More customization options
-- Advanced formatting features
-
----
+## 0.0.2
+- Update analysis_options.yaml file.
+- Update flutter_svg dependency

@@ -1,4 +1,4 @@
-part of 'phone_number_view.dart';
+part of 'phone_field_view.dart';
 
 class PhoneFormFieldState extends FormFieldState<PhoneNumber> {
   late final PhoneController controller;
@@ -7,7 +7,7 @@ class PhoneFormFieldState extends FormFieldState<PhoneNumber> {
   int? _maxValidLength;
 
   @override
-  PhoneNumberView get widget => super.widget as PhoneNumberView;
+  PhoneFormField get widget => super.widget as PhoneFormField;
 
   @override
   void initState() {

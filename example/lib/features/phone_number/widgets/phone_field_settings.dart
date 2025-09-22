@@ -6,8 +6,8 @@ import 'package:provider/provider.dart';
 
 /// Settings panel widget for configuring phone field options
 /// Separated for better organization and maintainability
-class PhoneFieldSettingsPanel extends StatelessWidget {
-  const PhoneFieldSettingsPanel({super.key});
+class PhoneFieldSettings extends StatelessWidget {
+  const PhoneFieldSettings({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,4 @@
-part of 'phone_number_view.dart';
+part of 'phone_field_view.dart';
 
 class PhoneController extends ChangeNotifier {
   /// focus node of the national number

@@ -7,8 +7,8 @@ import 'package:provider/provider.dart';
 
 /// Custom phone field widget with validation
 /// Separated for better code organization and reusability
-class PhoneFieldView extends StatelessWidget {
-  const PhoneFieldView({super.key});
+class PhoneField extends StatelessWidget {
+  const PhoneField({super.key});
 
   /// Get validator based on mobile-only setting
   PhoneNumberInputValidator? _getValidator(BuildContext context, bool mobileOnly) {
@@ -26,7 +26,7 @@ class PhoneFieldView extends StatelessWidget {
     return Consumer2<PhoneFieldSettingsProvider, PhoneControllerProvider>(
       builder: (context, settings, phoneProvider, child) {
         return AutofillGroup(
-          child: PhoneNumberView(
+          child: PhoneFormField(
             focusNode: phoneProvider.focusNode,
             controller: phoneProvider.controller,
             isCountryButtonPersistent: settings.isCountryButtonPersistent,
