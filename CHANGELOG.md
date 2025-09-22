@@ -23,3 +23,6 @@ This is the first stable release of `phone_number_view` - a Flutter package for 
 ## 0.0.2
 - Update analysis_options.yaml file.
 - Update flutter_svg dependency
+
+## 0.0.3
+- Refactor code
