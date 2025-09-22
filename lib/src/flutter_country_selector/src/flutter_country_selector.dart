@@ -53,7 +53,7 @@ abstract class CountrySelector {
   /// Use [CountrySelector.sheet] if you need to show the selector inside
   /// a widget that is not full screen. If you need to show the selector
   /// as a full page, use [CountrySelector.page]
-  static sheet({
+  static CountrySelectorSheet sheet({
     required void Function(IsoCode) onCountrySelected,
     List<IsoCode> countries = IsoCode.values,
     List<IsoCode> favoriteCountries = const [],
