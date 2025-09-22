@@ -99,7 +99,7 @@ abstract class CountrySelectorBaseState<W extends CountrySelectorBase>
   }
 
   /// when the user types in the search box
-  void onSearch(String searchedText) {
+  dynamic onSearch(String searchedText) {
     controller.search(searchedText);
     searchedText = searchedText;
   }
